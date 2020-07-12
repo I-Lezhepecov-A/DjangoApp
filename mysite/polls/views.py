@@ -16,7 +16,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     def get_queryset(self):
-        returnQuestion.objects.filter(pub_date__lte=timezone.now())
+        return Question.objects.filter(pub_date__lte=timezone.now())
 
 class ResultsView(generic.DetailView):
     model= Question
